@@ -16,7 +16,7 @@ En caso de que falte algún campo por llenar se deberá avisar al usuario con un
 
 - En este punto del documento aclaratorio, 
 ```bash
-3. Agrega el evento click al botón del buscador (1 punto)
+3. Agrega el evento click al botón del buscador (1 punto). No hacerlo directo en etiquetas html.
 ```
 
 Agregué el evento  al final del archivo JS. 
@@ -26,7 +26,7 @@ document.getElementById("btnBuscar").addEventListener("click", buscar);
 
 
 
-[link repo](https://github.com/fisaavedrae/desafio-condiciones)
+[link repo](https://github.com/fisaavedrae/desafio-arreglos)
 
-[link live app](https://desafio-condiciones.vercel.app/)
+[link live app](https://desafio-arreglos.vercel.app/)
 
