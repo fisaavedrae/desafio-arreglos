@@ -54,9 +54,10 @@ const propiedadesJSON = [
 
 function cargarPropiedades(cantidadCuartos = 0, metrosDesde = 0, metrosHasta = 0) {
   let html = "";
-  let total = 0
+  let total = 0;
   propiedadesJSON.forEach(propiedad => {
     if (propiedad.cuartos >= cantidadCuartos && propiedad.metros >= metrosDesde && propiedad.metros <= metrosHasta || cantidadCuartos == 0) {
+      // Uso interpolaciòn y templates para conxstruir el html antes de actualizar el DOM
       html += `<div class="propiedad">
                 <div class="img"
                     style="background-image: url('${propiedad.src}')">
@@ -79,20 +80,20 @@ function cargarPropiedades(cantidadCuartos = 0, metrosDesde = 0, metrosHasta = 0
 }
 
 function buscar() {
-  let cantidadCuartos = document.getElementById("cantidadCuartos").value;
-  let metrosDesde = document.getElementById("metrosDesde").value;
-  let metrosHasta = document.getElementById("metrosHasta").value;
+  let cantidadCuartos = Number(document.getElementById("cantidadCuartos").value);
+  let metrosDesde = Number(document.getElementById("metrosDesde").value);
+  let metrosHasta = Number(document.getElementById("metrosHasta").value);
 
   if (cantidadCuartos == "" || metrosDesde == "" || metrosHasta == "") {
-    alert("Hay campos vacíos");
+    alert("Debe ingresar valores en todos los filtros para realizar la busqueda.");
     return;
   }
   else if (cantidadCuartos <= 0 || metrosDesde <= 0 || metrosHasta <= 0) {
-    alert("Los filtros deben ser mayores que cero");
+    alert("Los filtros deben ser solo numeros positivos.");
     return;
   }
   else if (metrosDesde > metrosHasta) {
-    alert("Rango de metros no valido");
+    alert("Rango de metros no valido, valor desde debe ser menor igual que el valor hasta.");
     return;
   }
   else {
