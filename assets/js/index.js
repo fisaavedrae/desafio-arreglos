@@ -57,7 +57,7 @@ function cargarPropiedades(cantidadCuartos = 0, metrosDesde = 0, metrosHasta = 0
   let total = 0;
   propiedadesJSON.forEach(propiedad => {
     if (propiedad.cuartos >= cantidadCuartos && propiedad.metros >= metrosDesde && propiedad.metros <= metrosHasta || cantidadCuartos == 0) {
-      // Uso interpolaciòn y templates para conxstruir el html antes de actualizar el DOM
+      // Uso interpolaciòn y templates para construir el html antes de actualizar el DOM
       html += `<div class="propiedad">
                 <div class="img"
                     style="background-image: url('${propiedad.src}')">
@@ -95,7 +95,7 @@ function buscar() {
     return;
   }
   else if (metrosDesde > metrosHasta) {
-    alert("Rango de metros no valido, valor desde debe ser menor igual que el valor hasta.");
+    alert("Rango de metros no valido, valor desde debe ser menor o igual que el valor hasta.");
     return;
   }
   else {
