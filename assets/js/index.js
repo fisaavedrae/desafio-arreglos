@@ -85,7 +85,9 @@ function buscar() {
   let metrosHasta = Number(document.getElementById("metrosHasta").value);
 
   if (cantidadCuartos == "" || metrosDesde == "" || metrosHasta == "") {
-    alert("Debe ingresar valores en todos los filtros para realizar la busqueda.");
+    // Deje este mensaje, porque en el celular a pesar de ser los input de tipo number, se puede ingresar letras y las toma como valor vacio, 
+    // en desktop no es asi, pero el navegador si permite el ingreso de la letra e miniuscula, pero la toma como vacio. Por ese motivo el mensaje puede ser redudante con con el segundo if
+    alert("Debe ingresar valores en todos los filtros para realizar la busqueda y los valores deben ser solo numeros positivos.");
     return;
   }
   else if (cantidadCuartos <= 0 || metrosDesde <= 0 || metrosHasta <= 0) {
